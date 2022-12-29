@@ -45,10 +45,15 @@ INSTALLED_APPS = [
     # 'django_seed',
     # 'django_filters',
     'user',
+    'payment_user',
+    # 'services',
     
 ]
 
 MIDDLEWARE = [
+    #agregado
+    'corsheaders.middleware.CorsMiddleware',
+    #^
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,6 +136,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+#agregado
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8000',
+)
+
 #agregado
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -140,7 +152,7 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.ScopedRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'pagos': '1000/day',
+        'payments': '1000/day',
 
     }
 }
@@ -154,3 +166,4 @@ CACHES = {
 
 #agregado
 AUTH_USER_MODEL = 'user.User'
+

@@ -24,7 +24,7 @@ class SignupView(APIView):
             serializer.save()
 
             response = {
-                        "mes    sage":"El usuario se creó correctamente",
+                        "message":"El usuario se creó correctamente",
                         "data":serializer.data
                         }
 
@@ -54,6 +54,8 @@ class LoginView(APIView):
                         "id":idUser.email,
                         "tokens":tokens
                         }
+            # if tokens:
+            #     login(self.request, idUser)
             
             return Response(data=response, status=status.HTTP_200_OK)
 

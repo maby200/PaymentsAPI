@@ -26,13 +26,13 @@ class SignUpSerializer(serializers.ModelSerializer):
                 'password',
                 )
 
-    def validate(self, data):
+    def validate(self, attrs):
         """see if email is already taken before signing up"""
-        email_exists = User.objects.filter(email=data["email"]).exists()
+        email_exists = User.objects.filter(email=attrs["email"]).exists()
         if email_exists:
             raise ValidationError("Email is already taken")
         
-        return super().validate(data)
+        return super().validate(attrs)
     
     def create(self, validated_data):
         password = validated_data.pop("password")
@@ -64,4 +64,4 @@ class GetUserSerializer(serializers.ModelSerializer):
     # como `max_length` o `write_only`, es necesario que ,
     # por más que se haya creado un serializador tipo ModelSerializer
     # se tenga que especificar cómo se va a querer los datos de entrada 
-    # en cada uno de los campos que se vana a usar del modelos
+    # en cada uno de los campos que se van a usar de modelos
