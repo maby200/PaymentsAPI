@@ -30,8 +30,11 @@ Now we're ready to install the packages in `requirements.txt`
 (env) $ python manage.py runserver
 ```
 ## Creating an account
-Once your project is running, open it in your browser with the url: `http://127.0.0.1:8000/`. I recommend you to go create an account in:
-`http://127.0.0.1:8000/users/signup/`, then go to `http://127.0.0.1:8000/users/login/`, login with the email and password you've chosen and copy the `access` token it apears on the page after successfuly login.
+Once your project is running, open it in your browser with the url: `http://127.0.0.1:8000/`. \
+I recommend you to:
+1. Go and create an account in: `http://127.0.0.1:8000/users/signup/`
+2. Then go to `http://127.0.0.1:8000/users/login/`, login with the email and password you've chosen and
+3. Copy the `access` token it apears on the page after successfuly login.
 
 You can use Postman, or Thunder Client extension in VSCode to do the GET and POST, unfortunatelly you wont be able to do the entire CRUD since you are not admin.
 
