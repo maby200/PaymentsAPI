@@ -29,7 +29,7 @@ Now we're ready to install the packages in `requirements.txt`
 ```bash
 (env) $ python manage.py runserver
 ```
-
+## Creating an account
 Once your project is running, open it in your browser with the url: `http://127.0.0.1:8000/`. I recommend you to go create an account in:
 `http://127.0.0.1:8000/users/signup/`, then go to `http://127.0.0.1:8000/users/login/`, login with the email and password you've chosen and copy the `access` token it apears on the page after successfuly login.
 
