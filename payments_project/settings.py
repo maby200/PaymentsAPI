@@ -159,8 +159,19 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'payments': '1000/day',
         'others' : '2000/day',
-    }
+    },
+    "DEFAULT_SCHEMA_CLASS" : "drf_spectacular.openapi.AutoSchema",
 }
+
+# agregado
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
+
 
 # agregado
 SIMPLE_JWT ={

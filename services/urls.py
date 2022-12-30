@@ -3,6 +3,6 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 
-router.register(r"", api.ServiceViewSet,"services")
+router.register(r"services", api.ServiceViewSet,"services")
 
 urlpatterns = router.urls
