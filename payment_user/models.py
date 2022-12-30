@@ -30,6 +30,7 @@ class Payments(models.Model):
         return f"Recibo para {self.user.username}"
 
 class PaymentsV2(models.Model):
+    # Not using since it doesnt show the drop dow menu for all the services ...
     service = models.ForeignKey(Services, on_delete=models.CASCADE, related_name='services_v2')
     payment_date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users_v2')

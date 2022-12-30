@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,17 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
     'drf_spectacular',
     'drf_yasg', # for documentation
     # 'django_seed',
-    # 'django_filters',
+    'django_filters',
     'user',
     'payment_user',
     'services',
-    'expired_payments'
+    'expired_payments',
+    'versions',
     
 ]
 
@@ -138,13 +141,14 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#agregado
+# agregado
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8000',
+    'http://127.0.0.1:5000',
 )
 
-#agregado
+# agregado
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -158,13 +162,19 @@ REST_FRAMEWORK = {
     }
 }
 
-#agregado
+# agregado
+SIMPLE_JWT ={
+    'ACCESS_TOKEN_LIFETIME':datetime.timedelta(days=30),
+    'REFRESH_TOKEN_LIFETIME':datetime.timedelta(days=30)
+}
+
+# agregado
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     },
 }
 
-#agregado
+# agregado
 AUTH_USER_MODEL = 'user.User'
 
