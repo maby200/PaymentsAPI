@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     # 'django_filters',
     'user',
     'payment_user',
-    # 'services',
+    'services',
+    'expired_payments'
     
 ]
 
@@ -153,7 +154,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_THROTTLE_RATES': {
         'payments': '1000/day',
-
+        'others' : '2000/day',
     }
 }
 

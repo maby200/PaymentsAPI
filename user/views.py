@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status, viewsets
 
 from .serializers import SignUpSerializer, GetUserSerializer
+from .pagination import StandardResultsSetPagination
 from .tokens import create_jwt_pair_for_user
 from .models import User
 
@@ -80,3 +81,5 @@ class LoginView(APIView):
 class GetUsersView(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
     serializer_class = GetUserSerializer
+    pagination_class = StandardResultsSetPagination
+    
