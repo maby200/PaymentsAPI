@@ -39,3 +39,11 @@ I recommend you to:
 You can use Postman, or Thunder Client extension in VSCode to do the GET and POST, unfortunatelly you wont be able to do the entire CRUD since you are not admin.
 
 For a better experience, you can go to `http://127.0.0.1:8000/api/schema/redoc/` or `http://127.0.0.1:8000/api/schema/swagger-ui/`
+
+
+## Useful links:
+- [How create trigger in Django Rest Framework to change booleanfield?](https://stackoverflow.com/questions/52439024/how-create-trigger-in-django-rest-framework-to-change-booleanfield)
+
+- [API versioning in-depth](https://gearheart.io/articles/api-versioning-with-django-rest-framework/)
+
+- Book: [DJANGO for APIs](https://djangoforapis.com/)
